@@ -1,4 +1,4 @@
-# Brain Teaser: Canonical Sort of Trade Records
+# Canonical Order Sort
 
 You are given a list of trade execution records from an upstream feed. The records may arrive out of order. Each trade record is a dictionary with the fields:
 - `trade_id` (string, unique)
@@ -9,13 +9,11 @@ You are given a list of trade execution records from an upstream feed. The recor
 - `side` ("B" or "S")
 
 Return the records sorted into a deterministic canonical order:
-1. First by increasing `ts`
-2. Then by increasing `symbol` lexicographically
-3. Finally by increasing `trade_id` lexicographically
+1. increasing `ts`
+2. increasing `symbol` lexicographically
+3. increasing `trade_id` lexicographically
 
-## Examples
-
-### Example 1
+## Example 1
 
 Input:
 ```python
@@ -35,10 +33,7 @@ Output:
 ]
 ```
 
-Notes:
-The records are primarily ordered by timestamp: 1000, then 1001, then 1002.
-
-### Example 2
+## Example 2
 
 Input:
 ```python
@@ -58,9 +53,6 @@ Output:
 ]
 ```
 
-Notes:
-All timestamps are equal, so sort by symbol. Within `AAPL`, sort by `trade_id`.
-
 ## Constraints
 
 - 0 <= len(trades) <= 200000
@@ -69,17 +61,4 @@ All timestamps are equal, so sort by symbol. Within `AAPL`, sort by `trade_id`.
 - `side` is either "B" or "S"
 - Timestamps and prices fit in standard integer ranges
 
-## Prompt for Practice
-
 Write a function that takes a list of records and returns them in canonical order.
-
-You can assume:
-- records are dictionaries with the fields shown above
-- there may be duplicate or out-of-order timestamps
-- output must be deterministic
-
-## Hints
-
-- This is fundamentally a sorting problem.
-- Think carefully about the ordering priority.
-- The ordering should be deterministic even when timestamps tie.
