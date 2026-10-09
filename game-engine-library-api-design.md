@@ -4,12 +4,3 @@ The interviewer now asks:
 "Suppose we wanted to turn this code into a library that other engineers depend on — or expose it behind an API. What would you change, and what would you add?"
 
 Walk through the concrete steps you would take, and explain why each one matters.
-
-How to organize your answer
-
-Think contract, not code
-
-Constraints & Assumptions
-The interview implementation is a few hundred lines of working code (e.g., Python), single-threaded, in-memory, and logically correct.
-"Library" means other engineers import and call your code in-process; "API" means a network service that other systems call.
-No specific scale target was given; treat correctness and usability as primary and performance as secondary.
